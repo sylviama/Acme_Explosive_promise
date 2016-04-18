@@ -1,0 +1,42 @@
+{
+    "types": [
+        {
+            "id": 0,
+            "category": 0,
+            "name": "personal",
+            "description": "Fireworks intended for recreational use during holiday celebrations"
+        },
+        {
+            "id": 1,
+            "category": 0,
+            "name": "city",
+            "description": "Fireworks intended for seeing by the whole city"
+        },
+        {
+            "id": 2,
+            "category": 0,
+            "name": "weapon",
+            "description": "Fireworks could pretent to be weapon"
+        },
+        {
+            "id": 3,
+            "category": 1,
+            "name": "cart",
+            "description": "Fireworks cart"
+        },
+        {
+            "id": 4,
+            "category": 1,
+            "name": "buffer",
+            "description": "Buffer to hold fireworks"
+        },
+        {
+            "id": 5,
+            "category": 1,
+            "name": "light",
+            "description": "use light instead"
+        }
+    ]
+}
+
+
