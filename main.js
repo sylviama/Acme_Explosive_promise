@@ -64,43 +64,37 @@ function loopThrough(cateId){
   console.log(productIdArray);
 
   //loop through
-  string+="<div class='container'><div class='row'>";
+  $("#output").append("<div class='container'><div class='row'></div></div>");
 
   $(products.products).each(function(i, elementProduct){
     $(productIdArray).each(function(j,elementIdArray){
       if(elementIdArray===elementProduct.id){
 
-        //!!!!need to figure out if use jquery how to write, append is appending the whole tag, not parially
-        string+= "<div class='col-md-4'><h4>"+elementProduct.name+"</h4>";
+        $(".row").append("<div class='col-md-4' id='"+elementProduct.id+"'><h4>"+elementProduct.name+"</h4></div>");
         
         //record the looped product's type
         var recordType = elementProduct.type;
         $(types.types).each(function(i,elementTypes){
           if(elementTypes.id===recordType){
-            string+= "<p>Type: "+elementTypes.name+"</p>";
+            $("#"+elementProduct.id).append("<p>Type: "+elementTypes.name+"</p>");
 
             //record the looped type's category
             var recordCategory=elementTypes.category;
             $(category.categories).each(function(k,elementCategory){
               if(elementCategory.id===recordCategory){
-                string+= "<p>Category: "+elementCategory.name+"</p></div>";
-              }
-            })
-          }
-        })
-      }
-    })
-  })
-  string+= "</div></div>";
-  output.innerHTML = string;
-}
+                $("#"+elementProduct.id).append("<p>Category: "+elementCategory.name+"</p>");
+              };
+            });
+          };
+        });
+      };
+    });
+  });
+};
 
 //clear DOM
-//!!!!clear function suddently doesn't work!!!
 function clear(){
-  // $("#output").html("");
-  // output.text ="";
-  output.innerHTML = "";
+  $("#output").html("");
 }
 
 //run
