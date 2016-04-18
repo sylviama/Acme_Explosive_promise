@@ -99,11 +99,10 @@ function clear(){
 
 //run
 $("#show").click(function(){
-  //!!!need to figure out how to use jquery for selected!!!
-  if(document.getElementById("fireworks").selected===true){
+  if($("#fireworks").is(":selected")){
     clear();
     promise.then(loadCategory(0));
-  }else if(document.getElementById("demolition").selected===true){
+  }else if($("#demolition").is(":selected")){
     clear();
     promise.then(loadCategory(1));
   }
